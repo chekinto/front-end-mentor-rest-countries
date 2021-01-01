@@ -38,7 +38,7 @@
 .country__page-details {
   display: flex;
   gap: 140px;
-margin-bottom: 68px;
+  margin-bottom: 68px;
 }
 
 .page__content-borders {
