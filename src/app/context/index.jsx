@@ -1,9 +1,11 @@
 import React, { useState, useEffect, createContext, useContext } from 'react'
+import { Loader } from 'app/components'
 
 export const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState(false)
+  const theme = localStorage.getItem('theme')
+  const [isDark, setIsDark] = useState(theme === 'dark' ? true : false)
   const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
   const [region, setRegion] = useState('')
@@ -29,15 +31,28 @@ export const AppProvider = ({ children }) => {
     const fetchName = await fetch(`${baseUrl}/name/${query}`)
     const nameData = await fetchName.json()
     setCountries(nameData)
-    setLoading(false)
   }
 
   useEffect(() => {
     fetchCountries()
   }, [])
 
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.remove('light')
+      document.body.classList.add('dark')
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark')
+      document.body.classList.add('light')
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark])
+
+
+
   if (loading) {
-    return <h1>Loading</h1>
+    return <Loader />
   }
   return (
     <AppContext.Provider value={{
@@ -52,8 +67,8 @@ export const AppProvider = ({ children }) => {
       fetchCountries,
       fetchByRegion,
       fetchByName,
-      theme,
-      setTheme
+      isDark,
+      setIsDark
     }}>
       {children}
     </AppContext.Provider>

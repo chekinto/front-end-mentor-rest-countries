@@ -1,5 +1,9 @@
+.container.header {
+  margin-bottom: 48px;
+}
+
 header {
-  background-color: var(--white);
+  background-color: var(--background);
   box-shadow: var(--shadow-dark);
 }
 
@@ -30,4 +34,11 @@ header {
 .header__toggler-text {
   font-size: 16px;
   margin-left: 8px;
+}
+
+
+@media (max-width: 800px) {
+  .container.header {
+  margin-bottom: 24px;
+}
 }

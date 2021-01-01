@@ -1,8 +1,9 @@
 .country {
   border-radius: var(--border-radius);
-  background-color: var(--white);
+  background-color: var(--background-accent);
   box-shadow: var(--shadow-light);
   overflow: hidden;
+  height: auto;
 }
 
 .country__flag {

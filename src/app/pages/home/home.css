@@ -5,9 +5,10 @@
   margin: 48px 0;
 }
 
-@media (max-width: 576px) {
-  .filter-wrapper {
+@media (max-width: 800px) {
+  .filter__wrapper {
     flex-direction: column;
+    margin-top: 0;
   }
 }
 

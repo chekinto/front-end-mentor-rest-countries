@@ -7,4 +7,21 @@
   height: 56px;
   line-height: 20px;
   min-width: 480px;
+  width: 100%;
+  background-color: var(--background-accent);
+  font-family: inherit;
+  color: var(--text-color);
+}
+.input[type="text"]::placeholder {
+  color: var(--text-color-input);
+}
+
+@media (max-width: 800px) {
+  form {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  .input[type="text"] {
+    min-width: 0;
+  }
 }

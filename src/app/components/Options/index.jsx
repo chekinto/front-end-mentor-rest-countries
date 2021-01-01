@@ -9,7 +9,7 @@ export const Options = () => {
   const [option, setOption] = useState('Filter by Region')
   const { fetchByRegion, fetchCountries } = useGlobal()
 
-  const handleDropdown = (option) => {
+  const handleDropdown = (e, option) => {
     if (option === 'Filter by Region') {
       setOption(option)
       fetchCountries()
@@ -24,7 +24,7 @@ export const Options = () => {
   return (
     <>
       <div className="options__container">
-        <div className="options" onClick={() => setIsOpen(!isOpen)}>
+        <div className="options" onClick={() => { setIsOpen(!isOpen) }}>
           <span>{option}</span>
           <ChevronDown width={12} height={12} />
         </div>
@@ -34,7 +34,7 @@ export const Options = () => {
             {options.map(({ option }) => (
               <li
                 key={option.name}
-                onClick={() => handleDropdown(option)}>
+                onClick={(e) => handleDropdown(e, option)}>
                 {option}
               </li>
             ))}

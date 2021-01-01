@@ -20,8 +20,6 @@ export const Country = (props) => {
     fetchCountry()
   }, [name.country])
 
-  console.log('country :>> ', country[0]);
-
   return (
     <main>
       <div className="country__page">
@@ -40,7 +38,7 @@ export const Country = (props) => {
 
             <div className="country__page-info">
               <h2>{country[0]?.name}</h2>
-              <div className="country__page-test">
+              <div className="country__page-details">
                 <div>
                   <p>
                     <strong>Native Name:</strong>{' '}
@@ -87,12 +85,12 @@ export const Country = (props) => {
               </div>
 
               <div className="page__content-borders">
-                <strong>Border Countries: </strong>
-                <>
+                <p><strong>Border Countries: </strong></p>
+                <div>
                   {country[0]?.borders.map(border => (
-                    <span>{border}</span>
+                    <div className="border__countries">{border}</div>
                   ))}
-                </>
+                </div>
               </div>
             </div>
           </div>

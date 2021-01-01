@@ -7,7 +7,7 @@
 
 .options {
   border-radius: var(--border-radius);
-  background-color: var(--white);
+  background-color: var(--background-accent);
   box-shadow: var(--shadow);
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@
 }
 
 .options__dropdown {
-  background-color: var(--white);
+  background-color: var(--background-accent);
   box-shadow: var(--shadow-light);
   border-radius: var(--border-radius);
   position: absolute;
@@ -44,7 +44,9 @@
   margin-bottom: 0;
 }
 
-.options__dropdown li:hover {
-  background-color: lightgrey;
+@media (max-width: 800px) {
+  .options__container {
+    align-self: end;
+  }
 }
 
