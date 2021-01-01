@@ -64,6 +64,8 @@ export const AppProvider = ({ children }) => {
       setName,
       query,
       setQuery,
+      region,
+      setRegion,
       fetchCountries,
       fetchByRegion,
       fetchByName,
