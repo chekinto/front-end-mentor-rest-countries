@@ -1,0 +1,50 @@
+.options__container {
+  position: relative;
+  max-width: 200px;
+  width: 100%;
+  box-shadow: var(--shadow-light);
+}
+
+.options {
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  cursor: pointer;
+}
+
+.options span {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.options__dropdown {
+  background-color: var(--white);
+  box-shadow: var(--shadow-light);
+  border-radius: var(--border-radius);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.options__dropdown li {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  padding: 0 24px;
+  cursor: pointer;
+}
+
+.options__dropdown li:last-child {
+  margin-bottom: 0;
+}
+
+.options__dropdown li:hover {
+  background-color: lightgrey;
+}
+

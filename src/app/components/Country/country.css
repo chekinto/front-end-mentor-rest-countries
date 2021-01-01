@@ -1,0 +1,35 @@
+.country {
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.country__flag {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 160px;
+}
+
+.country__content {
+  padding: 24px;
+}
+
+.country__content h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.country__content span {
+  font-weight: bold;
+}
+
+.country__content p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.country__content p:last-child {
+  margin-bottom: 0;
+}
